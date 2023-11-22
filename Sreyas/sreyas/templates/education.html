@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% block head %}
+    <title>Education</title>
+    <link rel="shortcut icon" href="https://e7.pngegg.com/pngimages/705/1017/png-clipart-gender-symbol-gender-equality-social-equality-symbol-miscellaneous-cross.png" type="image/x-icon">
+    <link rel="stylesheet" href="../static/CSS/education.css">
+    {% endblock %}
+    {%block body %}
+    
+    <div class="bg-div">
+        <a class="logo-img" href="{{url_for('index')}}"><img height="18" weight="20"  src="https://e7.pngegg.com/pngimages/705/1017/png-clipart-gender-symbol-gender-equality-social-equality-symbol-miscellaneous-cross.png" alt="icon">
+        <a class="web-name" href="{{url_for('index')}}">Edu.Sex</a> 
+        </a>
+        <nav>
+            <ul>
+    <li><a href="{{url_for('index')}}">Home</a></li>
+    <li><a href="{{url_for('education')}}">Education</a></li>
+    <li><a href="{{url_for('volunteer')}}">Volunteer</a></li>
+    <li><a href="{{url_for('contact')}}">Contact</a></li>
+    <li>{% block y %}
+ 
+        {% if session.username %}
+           <a href="/logout">Logout</a>
+        {% else %}
+           <a href="/login">Login</a>
+        {% endif %}
+      
+     {% endblock %}</li>
+    <li><a href="{{url_for('signup')}}">Become a member</a></li>
+</ul>
+</nav>
+</div>
+
+        
+        <div class="container">
+            <!-- <iframe allow="autoplay;" height="100%" width="100%" allowfullscreen src="../static/video/edu.mp4" class="background-clip" frameborder="0"></iframe> -->
+            <div class="content">   
+                
+                <div id="login-form-wrap"> 
+                    
+                    <video autoplay loop muted plays-inline class="background-clip">
+                        <source src = "../static/video/edu.mp4" type = "video/mp4">
+                    </video>
+                    <table>
+                        
+                        <tr colspan="2" class="table-top">
+                <h1><strong>The lesson on Sex</strong></h1>
+            </tr>
+                    <td>
+                <!-- <div class = "wrapper"> -->
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/JdHVoV5v5uE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> 
+                <!-- </div>   -->
+            </td>
+              <td>
+                    <!-- <div class="text-box"> -->
+                            <h2>Check out this video</h2>
+                            <p>What is sex education and why is it important?</p>
+                            <p>How to maintain a healthy and respecful relationship?</p>
+                            <p>How to deal with peer pressure and make responsible decisions?</p>
+                        <!-- </div> -->
+                    </td>
+                    </table>
+                    
+                </div>
+                
+            </div>
+            
+        </div>
+        
+        {% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block head %}
+    <title>Sex Education</title>
+    <link rel="shortcut icon" href="https://e7.pngegg.com/pngimages/705/1017/png-clipart-gender-symbol-gender-equality-social-equality-symbol-miscellaneous-cross.png" type="image/x-icon">
+<link rel="stylesheet" href="../static/CSS/index.css">
+{% endblock %}
+{%block body %}
+        <div class="bg-div">
+            <a class="logo-img" href="{{url_for('index')}}"><img height="18" weight="20"  src="https://e7.pngegg.com/pngimages/705/1017/png-clipart-gender-symbol-gender-equality-social-equality-symbol-miscellaneous-cross.png" alt="icon"></a>
+            <a class="web-name" href="{{url_for('index')}}">Edu.Sex</a> 
+            <nav>
+                <ul>
+        <li><a href="{{url_for('index')}}">Home</a></li>
+        <li><a href="{{url_for('education')}}">Education</a></li>
+        <li><a href="{{url_for('volunteer')}}">Volunteer</a></li>
+        <li><a href="{{url_for('contact')}}">Contact</a></li>
+        <li>{% block y %}
+            {% if session.username %}
+                <a href="/logout">Logout</a>
+            {% else %}
+                <a href="/login">Login</a>
+            {% endif %}
+            {% endblock %}</li>
+        <li><a href="{{url_for('signup')}}">Become a member</a></li>
+    </ul>
+    </nav>
+    </div>
+<div id="background-wrap">
+    <video autoplay loop muted plays-inline class="background-clip">
+        <source src = "../static/video/edu.mp4" type = "video/mp4">
+    </video>
+    <h2>Building an evidence</h2>
+<p>
+    Building an evidence- and rights-based approach to healthy decision-making.
+As they grow up, young people face important decisions about relationships, sexuality, and sexual behavior. The decisions they make can impact their health and well-being for the rest of their lives. Young people have the right to lead healthy lives, and society has the responsibility to prepare youth by providing them with comprehensive sexual health education that gives them the tools they need to make healthy decisions. But it is not enough for programs to include discussions of abstinence and contraception to help young people avoid unintended pregnancy or disease. Comprehensive sexual health education must do more. It must provide young people with honest, age-appropriate information and skills necessary to help them take personal responsibility for their health and overall well being. This paper provides an overview of research on effective sex education, laws and policies that shape it, and how it can impact young people’s lives.
+</p>
+<p>Sex education gives young people the knowledge and skills they need for a lifetime of good sexual health. They learn how to have healthy relationships, make informed decisions about sex, think critically about the world, be a good ally to those who are marginalized, and love themselves for who they are.</p>
+<p>Research shows that sex education that’s culturally responsive and inclusive helps young people develop the social and emotional skills they need to become caring and empathetic adults. This type of sex education early and often leads to appreciation of sexual diversity, dating and intimate partner violence prevention, development of healthy relationships, prevention of child sex abuse, improved social/emotional learning, and increased media literacy. It also helps young people avoid unintended pregnancies and sexually transmitted infections (STIs)</p>
+</div>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block head %}
+  <title>Signup</title>
+  <link rel="shortcut icon" href="https://e7.pngegg.com/pngimages/705/1017/png-clipart-gender-symbol-gender-equality-social-equality-symbol-miscellaneous-cross.png" type="image/x-icon">
+<link rel="stylesheet" href="../static/CSS/signup.css">
+
+{% endblock %}
+{%block body %}
+  <div class="bg-div">
+    <a class="logo-img" href="{{url_for('index')}}"><img height="18" weight="20"  src="https://e7.pngegg.com/pngimages/705/1017/png-clipart-gender-symbol-gender-equality-social-equality-symbol-miscellaneous-cross.png" alt="icon">
+    <a class="web-name" href="{{url_for('index')}}">Edu.Sex</a> 
+    </a>
+</div>
+<!-- partial:index.partial.html -->
+<div id="signup-form-wrap">
+  <video autoplay loop muted plays-inline class="background-clip">
+    <source src = "../static/video/edu.mp4" type = "video/mp4">
+</video>
+  <h2>SignUp</h2>
+  <form action="{{url_for('signup')}}" id="signup-form" method="post">
+    <p>
+    <input type="text" id="username" name="username" placeholder="Full Name" required><i class="validation"><span></span><span></span></i>
+    </p>
+    <p>
+    <input type="email" id="email" name="email" placeholder="Email Address" required><i class="validation"><span></span><span></span></i>
+    </p>
+    <p>
+    <input type="password" id="password" name="password" placeholder="Password" required><i class="validation"><span></span><span></span></i>
+    </p>
+    <!--<div id="msg">
+      Password must contain:
+      <p id="letter" class="invalid"><b>lowercase</b> letter <br><b>capital (uppercase)</b> letter <br><b>number</b><br> Minimum <b>8 characters </b><br> </p>
+    </div> -->
+    <p>
+    <input type="submit" id="login" value="Sign Up">
+    </p>
+  </form>
+  <div id="create-account-wrap">
+    <p>Already a member? <a href="{{url_for('login')}}"><b>Login</b></a><p>
+  </div><!--create-account-wrap-->
+</div><!--login-form-wrap-->
+<!-- partial -->
+  
+{% endblock %}
